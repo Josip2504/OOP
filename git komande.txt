@@ -1,0 +1,12 @@
+git init
+git status - promjene
+git add - dodajemo promjene
+git commit -m "poruka"
+push
+git log - sve promjene logovi
+git branch develop
+git checkout - prebacimo na branch
+git merge - spajamo branch na master (2 brancha spojimo)
+
+tocuh - pravi txt
+
