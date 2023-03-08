@@ -1,0 +1,4 @@
+git clone - primarily used to point to an existing repo and make a clone or copy of that repo at in a new directory, at another location
+git pull - used to fetch and download content from a remote repository and immediately update the local repository to match that content
+git revert -  forward-moving undo operation that offers a safe method of undoing changes
+git fetch -  a primary command used to download contents from a remote repository
