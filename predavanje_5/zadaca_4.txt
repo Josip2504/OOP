@@ -1,0 +1,8 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    if(args0 in 90..110) {
+        println("Number is close to 100")
+    }else{
+        println("Number is not close to 100")
+    }
+}
