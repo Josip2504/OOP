@@ -1,0 +1,12 @@
+fun main(args: Array<String>) {
+    when(args[0]) {
+        "Monday" -> println("Work day")
+        "Tuesday" -> println("Work day")
+        "Wednsday" -> println("Work day")
+        "Thursday" -> println("Work day")
+        "Friday" -> println("Work day")
+        "Saturday" -> println("Weekend")
+        "Sunday" -> println("Weekend")
+        else -> println("Unknown day")
+    }
+}
