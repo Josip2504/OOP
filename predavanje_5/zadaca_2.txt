@@ -1,0 +1,15 @@
+fun main(args: Array<String>) {
+    var argsToInt = args[0].toInt()
+    if (argsToInt == 0) {
+        print(argsToInt)
+        println(" = 0")
+    }else if (argsToInt < 0) {
+        print(argsToInt)
+        println(" < 0")
+    }else if (argsToInt > 0) {
+        print(argsToInt)
+        println(" > 0")
+    }else{
+        println("Input number")
+    }
+}
