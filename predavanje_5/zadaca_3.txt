@@ -1,0 +1,9 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    var args1 = args[1].toInt()
+    if (args0 < args1) {
+        println(args1)
+    }else{
+        println(args0)
+    }
+}
