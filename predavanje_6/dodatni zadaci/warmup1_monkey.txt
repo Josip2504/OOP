@@ -1,0 +1,11 @@
+fun main(args: Array<String>) {
+    var aSmile = args[0].toBoolean()
+    var bSmile = args[1].toBoolean()
+    if (aSmile && bSmile) {
+        println("True")
+    }else if (aSmile || bSmile) {
+        println("False")
+    }else{
+        println("True")
+    }
+}
