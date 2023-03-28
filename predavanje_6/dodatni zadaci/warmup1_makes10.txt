@@ -1,0 +1,11 @@
+fun main(args: Array<String>) {
+    var a = args[0].toInt()
+    var b = args[1].toInt()
+    if (a + b == 10) {
+        println("Zbroj je 10")
+    }else if (a == 10 || b == 10) {
+        println("Jedan od brojeva je 10")
+    }else{
+        println("false")
+    }
+}
