@@ -1,0 +1,9 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    var args1 = args[1].toInt()
+    if (args0 % 2 == 0 || args1 % 2 == 0) {
+        println("barem jedan je paran")
+    }else if (args0 % 2 != 0 && args1 % 2 != 0) {
+        println("ni jedan nije paran")
+    }
+}
