@@ -1,0 +1,5 @@
+fun main(args: Array<String>) {
+    var a = args[0].toInt()
+    var result = 21 - a
+    println(result)
+}
