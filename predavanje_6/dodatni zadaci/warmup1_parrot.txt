@@ -1,0 +1,13 @@
+fun main(args: Array<String>) {
+    var parrot = args[0].toBoolean()
+    var time = args[1].toInt()
+    if (parrot) {
+        if (time in 1..7 || time in 20..24) {
+            println("True")
+        }else{
+            println("False")
+        }
+    }else{
+        println("false")
+    }
+}
