@@ -1,0 +1,20 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    var args1 = args[1].toInt()
+    var args2 = args[2].toBoolean()
+    if (args2) {
+        if (args0 < 0 && args1 < 0) {
+            println("True")
+        }else{
+            println("False")
+        }
+    }else{
+        if (args0 < 0 && args1 < 0) {
+            println("False")
+        }else if (args0 > 0 && args1 > 0) {
+            println("False")
+        }else{
+            println("True")
+        }
+    }
+}
