@@ -1,0 +1,8 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    if (args0 % 5 != 0) {
+        println("nije djeljiv s 5")
+    }else{
+        println("djeljiv s 5")
+    }
+}
