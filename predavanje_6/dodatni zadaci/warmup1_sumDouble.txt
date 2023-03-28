@@ -1,0 +1,11 @@
+fun main(args: Array<String>) {
+    var a = args[0].toInt()
+    var b = args[1].toInt()
+    var sum = a + b
+    var sum2 = sum * 2
+    if (a == b) {
+        println(sum2)
+    }else{
+        println(sum)
+    }
+}
