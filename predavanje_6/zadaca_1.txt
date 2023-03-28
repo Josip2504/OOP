@@ -1,0 +1,8 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toInt()
+    if (args0 % 2 == 0) {
+        println("paran")
+    }else{
+        println("neparan")
+    }
+}
