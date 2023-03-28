@@ -1,0 +1,13 @@
+fun main(args: Array<String>) {
+    var args0 = args[0].toBoolean()
+    var args1 = args[1].toBoolean()
+    if (args1) {
+        println("Sleep in")
+    }else{
+        if (args0) {
+            println("NO sleep in")
+        }else{
+            println("Sleep in")
+        }
+    }
+}
