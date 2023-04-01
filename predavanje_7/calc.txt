@@ -1,0 +1,36 @@
+import java.util.Scanner
+import kotlin.system.exitProcess
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    var a: Int = 0
+    var b: Int = 0
+    var sum = a + b
+    var min = a - b
+    var multi = a * b
+    var div = a / b
+    println("""
+        Chose operation:
+        1. Sum
+        2. Min
+        3. Mulit
+        4. Div
+        5. Exit
+    """.trimIndent())
+
+    var option:Int = scanner.nextInt()
+
+    when (option) {
+        1 -> sum
+        2 -> min
+        3 -> multi
+        4 -> div
+        5 -> exitProcess(Int)
+    }
+
+    println("Enter a nuber: ")
+    var a:Int = scanner.nextInt()
+    println("Enter a second number: ")
+    var b:Int = scanner.nextInt()
+
+}
