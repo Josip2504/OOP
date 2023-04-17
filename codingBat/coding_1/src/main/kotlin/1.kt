@@ -1,36 +1,40 @@
 import java.util.InputMismatchException
 import java.util.Scanner
 
+
 fun main() {
 
     val scanner = Scanner(System.`in`)
-    var a = 0
+    var a: Int
     var b: Int
 
-    println("Enter a num: ")
-    var a: Int
-    try {
-        var a = scanner.nextInt()
-    }catch (ex: InputMismatchException){
-        println("Must enter a number!")
-        scanner.nextLine()
+    while (true){
+        println("Enter a num: ")
+        try {
+            a = scanner.nextInt()
+            break
+        } catch (ex: InputMismatchException) {
+            println("Must enter a number!")
+            scanner.nextLine()
+        }
     }
 
-    println("Enter second num: ")
-    var b: Int
-    try {
-        b = scanner.nextInt()
-    }catch (ex: InputMismatchException){
-        println("Must enter a number!")
-        scanner.nextLine()
+    while (true) {
+        println("Enter a second num:")
+        try {
+            b = scanner.nextInt()
+            break
+        } catch (ex: InputMismatchException) {
+            println("Must enter a number!")
+            scanner.nextLine()
+        }
     }
 
     if (a == 6 || b == 6){
-        println("true")
-    }else if (a + b == 6){
-        println("true")
+        println("True")
+    }else if (a + b == 6) {
+        println("True")
     }else{
-        println("false")
+        println("False")
     }
-
 }
