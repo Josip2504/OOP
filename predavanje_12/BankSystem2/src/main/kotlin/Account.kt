@@ -4,4 +4,8 @@ open class Account(val type: String, var balance: Double) {
         return "$type: $balance"
     }
 
+    override fun toString(): String {
+        return getInfo()
+    }
+
 }
