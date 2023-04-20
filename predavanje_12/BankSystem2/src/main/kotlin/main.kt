@@ -9,5 +9,13 @@ fun main() {
     bank.addUser(user2)
 
     user1.addAccount(Tekuci(100.0))
+    user1.addAccount(Ziro(1000.0))
+
+    user2.addAccount(Tekuci(300.0))
+    user2.addAccount(Ziro(200.0))
+
+
+
+
 
 }

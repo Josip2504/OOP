@@ -5,5 +5,5 @@ class User(private val name: String) {
     fun addAccount(account: Account){
         accounts.add(account)
     }
-
+    
 }

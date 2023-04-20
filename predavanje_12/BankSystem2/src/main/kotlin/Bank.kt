@@ -9,4 +9,8 @@ class Bank (private val users: MutableList<User> = mutableListOf()) {
             println(users)
         }
     }
+
+    override fun toString(): String {
+        return "Account users: $users"
+    }
 }
