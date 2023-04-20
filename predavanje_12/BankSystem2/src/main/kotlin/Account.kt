@@ -1,7 +1,7 @@
-open class Account(val type: String, var balance: Double) {
+open class Account(var balance: Double) {
 
     open fun getInfo(): String{
-        return "$type: $balance"
+        return "$balance"
     }
 
     override fun toString(): String {

@@ -8,6 +8,6 @@ fun main() {
     bank.addUser(user1)
     bank.addUser(user2)
 
-    user1.addAccount("Tekuci")
+    user1.addAccount(Tekuci(100.0))
 
 }
