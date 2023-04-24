@@ -1,10 +1,8 @@
 fun main() {
-
-    val developers = muta<MobileDeveloper>()
-
+    val list: MutableList<FlyingAnimal> = mutableListOf()
 }
 
-interface Animal{
+interface Animal {
     fun eat()
     fun sleep()
 }
@@ -21,6 +19,7 @@ class Cat: Animal {
     override fun sleep() {
         println("Cat is sleeping")
     }
+
 }
 
 class Bird: Animal, FlyingAnimal {
@@ -35,15 +34,5 @@ class Bird: Animal, FlyingAnimal {
     override fun fly() {
         println("Bird is flying")
     }
-}
 
-class FlyingWorm(): FlyingAnimal {
-    override fun fly() {
-        println("Worm is flying")
-    }
-
-}
-
-fun main() {
-    var zoo: MutableList<FlyingAnimal> = mutableListOf(Bird(), FlyingWorm())
 }
