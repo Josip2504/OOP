@@ -22,6 +22,10 @@ fun main(args: Array<String>) {
     val user = db.users.first {
         it.name eq userName
     }
+    if(user.name != userName){
+        println("Invalid credentials")
+        return
+    }
     if(user.password == password){
         println("Welcome")
 
