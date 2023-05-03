@@ -39,24 +39,41 @@ class DatabaseConnection {
     }
 
     fun getTaskById(taskId: Int): Task? {
-        return  connection.tasks.find {
+        return connection.tasks.find {
             it.id eq taskId
         }
     }
 
-    fun addTask(newTask: String, user: User): Boolean {
-        val succes = connection.tasks.add(
+    fun getUserById(userId: Int): User? {
+        return connection.users.find {
+            it.id eq userId
+        }
+    }
+
+    fun addTask(newTask: String, userId: Int): Boolean {
+        val user: User = getUserById(userId)?: return false
+        val success = connection.tasks.add(
             Task {
                 name = newTask
                 this.user = user
             }
         )
-        return succes > 0
+        return success > 0
     }
 
     fun deleteTask(taskId: Int): Boolean {
         val succes = getTaskById(taskId)?.delete()?: -1
         return succes > 0
+    }
+
+    fun addNewUser(username: String, password: String): Boolean {
+        val success = connection.users.add(
+            User {
+                name = username
+                this.password = password
+            }
+        )
+        return success > 0
     }
 
 }
