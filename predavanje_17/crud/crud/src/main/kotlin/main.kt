@@ -3,7 +3,7 @@ import schema.users
 import java.util.Scanner
 
 fun main() {
-    val db = DatabaseConnection().connection
+    //val db = DatabaseConnection().connection
     val scanner = Scanner(System.`in`)
 
     while (true) {
@@ -16,19 +16,11 @@ fun main() {
         val choice = scanner.nextInt()
 
         when (choice){
-            1->{}
+            1->{
+                Create().start()
+            }
             2->{
-                println("Enter a name of user you wanna see:")
-                var userToSee = scanner.next()
-                for (user in db.users){
-                    if (user.name == userToSee){
-                        println("User name: ${user.name} and his ID: ${user.id}")
-                        break
-                    }else{
-                        println("$userToSee doesn't exist")
-                        break
-                    }
-                }
+                Read().start()
             }
             3->{}
             4->{}

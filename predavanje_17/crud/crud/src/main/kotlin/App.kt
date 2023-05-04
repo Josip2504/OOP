@@ -1,6 +1,0 @@
-class Read {
-
-    fun start(){
-
-    }
-}
