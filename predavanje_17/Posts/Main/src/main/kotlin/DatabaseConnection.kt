@@ -1,4 +1,7 @@
+import model.User
 import org.ktorm.database.Database
+import org.ktorm.entity.add
+import schema.users
 
 class DatabaseConnection {
 
@@ -10,4 +13,14 @@ class DatabaseConnection {
         user = user,
         password = pass
     )
+
+    fun addNewUser(userName: String, password: String): Boolean{
+        val success = connection.users.add(
+            User {
+                name = userName
+                this.password = password
+            }
+        )
+        return success > 0
+    }
 }
