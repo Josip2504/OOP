@@ -23,7 +23,9 @@ fun main() {
                 Read().start()
             }
             3->{}
-            4->{}
+            4->{
+                Delete().start()
+            }
             5->{
                 println("Thanks for using app, bye!")
                 break
