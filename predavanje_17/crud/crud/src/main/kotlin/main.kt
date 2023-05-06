@@ -3,7 +3,7 @@ import schema.users
 import java.util.Scanner
 
 fun main() {
-    //val db = DatabaseConnection().connection
+    val db = DatabaseConnection()
     val scanner = Scanner(System.`in`)
 
     while (true) {
@@ -20,7 +20,7 @@ fun main() {
                 Create().start()
             }
             2->{
-                Read().start()
+                Read(db).start()
             }
             3->{}
             4->{

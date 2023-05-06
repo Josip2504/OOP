@@ -7,12 +7,12 @@ import schema.Users
 import schema.users
 import java.util.Scanner
 
-class Read() {
+class Read(val dbConnection: DatabaseConnection) {
 
     fun start(){
 
         val scanner = Scanner(System.`in`)
-        val db = DatabaseConnection().connection
+        val db = dbConnection.connection
 
         println("Enter a name of user you wanna see:")
         val userSearch = scanner.next()
