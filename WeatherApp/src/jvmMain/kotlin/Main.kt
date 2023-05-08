@@ -1,11 +1,9 @@
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.DpSize
@@ -40,7 +38,12 @@ fun main() = application {
     ) {
         val scaffoldState = rememberScaffoldState()
 
-        MaterialTheme {
+        MaterialTheme(
+            colors = if (isSystemInDarkTheme()) DarkColorPalette else LightColorPalette,
+            typography = Typography,
+            shapes = Shapes,
+            isDark = isSystemInDarkTheme()
+        ) {
             when(navController.currentScreen.value){
                 NavController.Screen.LOGIN -> {
                     Scaffold(
