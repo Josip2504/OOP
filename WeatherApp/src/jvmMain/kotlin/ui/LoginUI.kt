@@ -70,6 +70,14 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Row {
+                    Checkbox(
+                        checked = true,
+                        onCheckedChange = null,
+                        modifier = Modifier.padding(all = 10.dp)
+                    )
+                    Text("Remember me", modifier = Modifier.padding(top = 14.dp))
+                }
+                Row {
                     Button(
                         onClick = {
                             loginController.onLogin(textFieldUsernameState, textFieldPasswordState)

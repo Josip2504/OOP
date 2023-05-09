@@ -1,3 +1,4 @@
+import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,6 @@ import ui.RegisterScreen
 import ui.WeatherScreen
 import util.AuthenticationService
 
-
 fun main() = application {
 
     val db = DatabaseConnection()
@@ -38,12 +38,7 @@ fun main() = application {
     ) {
         val scaffoldState = rememberScaffoldState()
 
-        MaterialTheme(
-            colors = if (isSystemInDarkTheme()) DarkColorPalette else LightColorPalette,
-            typography = Typography,
-            shapes = Shapes,
-            isDark = isSystemInDarkTheme()
-        ) {
+        MaterialTheme() {
             when(navController.currentScreen.value){
                 NavController.Screen.LOGIN -> {
                     Scaffold(

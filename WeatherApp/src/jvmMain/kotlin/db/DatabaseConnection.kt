@@ -1,6 +1,7 @@
 package db
 
 import dao.users
+import model.History
 import model.User
 import org.ktorm.database.Database
 import org.ktorm.dsl.eq
@@ -42,4 +43,8 @@ class DatabaseConnection {
             false
         }
     }
+
+//    fun getHistory(): History?{
+//        return connection
+//    }
 }

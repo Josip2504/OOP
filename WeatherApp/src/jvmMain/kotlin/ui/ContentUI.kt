@@ -80,5 +80,14 @@ fun ContentUI(data: WeatherResults) {
         }
     }
 
+    Divider(
+        color = MaterialTheme.colors.primary,
+        modifier = Modifier.padding(16.dp)
+    )
 
+    Text(
+        text = "History",
+        modifier = Modifier.padding(16.dp),
+        style = MaterialTheme.typography.h6
+    )
 }
