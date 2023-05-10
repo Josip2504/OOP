@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import controller.LoginController
 import controller.NavController
 import controller.WeatherController
+import db.DatabaseConnection
 import kotlinx.coroutines.launch
 import util.AuthenticationService
 import util.Lce
@@ -28,7 +29,7 @@ fun WeatherScreen(
     loginController: LoginController
 ) {
 
-
+    val db = DatabaseConnection()
     var queriedCity by remember { mutableStateOf(weatherController.getUserById(authenticationService.getAuthenticatedUserId())?.location?: "") }
     val scope = rememberCoroutineScope()
 
@@ -69,6 +70,7 @@ fun WeatherScreen(
             Button(
                 onClick = {
                     weatherController.setState(Lce.Loading)
+                    db.addHistory(queriedCity)
                     scope.launch {
                         weatherController.setState(weatherController.weatherForCity(queriedCity))
                     }

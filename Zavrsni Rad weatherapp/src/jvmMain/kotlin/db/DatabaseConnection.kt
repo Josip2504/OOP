@@ -1,5 +1,6 @@
 package db
 
+import dao.historys
 import dao.users
 import model.History
 import model.User
@@ -44,7 +45,19 @@ class DatabaseConnection {
         }
     }
 
-//    fun getHistory(): History?{
-//        return connection
-//    }
+    fun getHistory() {
+        if (connection.historys.isEmpty()){
+            return println("No history")
+        }else {
+            println("history")
+        }
+    }
+
+    fun addHistory(queriedCity: String){
+        connection.historys.add(
+            History {
+                location = queriedCity
+            }
+        )
+    }
 }

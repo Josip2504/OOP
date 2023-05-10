@@ -14,12 +14,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.unit.dp
+import db.DatabaseConnection
 import model.WeatherResults
 import util.ImageDownloader
 
 @Composable
 @Preview
 fun ContentUI(data: WeatherResults) {
+    val db = DatabaseConnection()
     var imageState by remember { mutableStateOf<ImageBitmap?>(null) }
 
     LaunchedEffect(data.currentWeather.iconUrl){
@@ -90,4 +92,6 @@ fun ContentUI(data: WeatherResults) {
         modifier = Modifier.padding(16.dp),
         style = MaterialTheme.typography.h6
     )
+
+    db.getHistory()
 }

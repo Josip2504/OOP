@@ -7,4 +7,5 @@ interface History: Entity<History> {
     val id: Int
     var user: String
     var location: String
+    var userId: User
 }
