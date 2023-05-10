@@ -2,6 +2,7 @@ package ui
 
 import controller.NavController
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -45,6 +46,7 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                 modifier = Modifier.fillMaxSize().padding(24.dp)
             ) {
                 TextField(
+                    shape = CircleShape,
                     value = textFieldUsernameState,
                     onValueChange = {
                         textFieldUsernameState = it
@@ -57,6 +59,7 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 TextField(
+                    shape = CircleShape,
                     value = textFieldPasswordState,
                     onValueChange = {
                         textFieldPasswordState = it
@@ -84,6 +87,7 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
 
                 Row {
                     Button(
+                        shape = CircleShape,
                         onClick = {
                             loginController.onLogin(textFieldUsernameState, textFieldPasswordState)
                         }

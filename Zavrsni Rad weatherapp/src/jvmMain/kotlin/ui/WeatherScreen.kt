@@ -1,7 +1,9 @@
 package ui
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExitToApp
@@ -11,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import controller.LoginController
 import controller.NavController
@@ -57,6 +60,7 @@ fun WeatherScreen(
                 Icon(Icons.Default.ExitToApp, "logout")
             }
             TextField(
+                shape = CircleShape,
                 modifier = Modifier.padding(16.dp).weight(1f),
                 value = queriedCity,
                 singleLine = true,
@@ -68,9 +72,11 @@ fun WeatherScreen(
                 leadingIcon =  { Icon(Icons.Filled.LocationOn, "Location")  }
             )
             Button(
+                shape = CircleShape,
+                border = BorderStroke(2.dp, Color.Transparent),
                 onClick = {
                     weatherController.setState(Lce.Loading)
-                    db.addHistory(queriedCity)
+//                    db.addHistory(queriedCity)
                     scope.launch {
                         weatherController.setState(weatherController.weatherForCity(queriedCity))
                     }

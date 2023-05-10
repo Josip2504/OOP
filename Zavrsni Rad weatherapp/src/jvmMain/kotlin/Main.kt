@@ -42,7 +42,7 @@ fun main() = application {
 
 
 //            TEST ZA GET HISTORY
-            db.getHistory()
+//            db.getHistory()
 
 
             when(navController.currentScreen.value){

@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import db.DatabaseConnection
 import model.WeatherResults
@@ -30,7 +31,7 @@ fun ContentUI(data: WeatherResults) {
 
     Text(
         text = "Current Weather",
-        modifier = Modifier.padding(16.dp),
+        textAlign = TextAlign.Start,
         style = MaterialTheme.typography.h6
     )
 
@@ -93,5 +94,5 @@ fun ContentUI(data: WeatherResults) {
         style = MaterialTheme.typography.h6
     )
 
-    db.getHistory()
+//    db.getHistory()
 }
