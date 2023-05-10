@@ -39,7 +39,12 @@ fun main() = application {
         val scaffoldState = rememberScaffoldState()
 
         MaterialTheme() {
+
+
+//            TEST ZA GET HISTORY
             db.getHistory()
+
+
             when(navController.currentScreen.value){
                 NavController.Screen.LOGIN -> {
                     Scaffold(

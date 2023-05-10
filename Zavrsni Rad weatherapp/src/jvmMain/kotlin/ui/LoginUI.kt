@@ -69,6 +69,9 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.size(16.dp))
+
+
+//              CHECKBOX NIJE DOVRSENO
                 Row {
                     Checkbox(
                         checked = true,
@@ -77,6 +80,8 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                     )
                     Text("Remember me", modifier = Modifier.padding(top = 14.dp))
                 }
+
+
                 Row {
                     Button(
                         onClick = {
