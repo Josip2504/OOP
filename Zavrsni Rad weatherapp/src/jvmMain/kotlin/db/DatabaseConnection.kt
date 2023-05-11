@@ -1,7 +1,9 @@
 package db
 
 //import dao.historys
+import dao.historys
 import dao.users
+import model.History
 //import model.History
 import model.User
 import org.ktorm.database.Database
@@ -45,19 +47,19 @@ class DatabaseConnection {
         }
     }
 
-//    fun getHistory() {
-//        if (connection.historys.isEmpty()){
-//            return println("No history")
-//        }else {
-//            println("history")
-//        }
-//    }
-//
-//    fun addHistory(queriedCity: String){
-//        connection.historys.add(
-//            History {
-//                location = queriedCity
-//            }
-//        )
-//    }
+    fun getHistory() {
+        if (connection.historys.isEmpty()){
+            return println("No history")
+        }else {
+            println("history")
+        }
+    }
+
+    fun addHistory(queriedCity: String){
+        connection.historys.add(
+            History {
+                location = queriedCity
+            }
+        )
+    }
 }
