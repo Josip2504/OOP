@@ -1,5 +1,3 @@
-import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,6 +19,7 @@ import ui.LoginScreen
 import ui.RegisterScreen
 import ui.WeatherScreen
 import util.AuthenticationService
+
 
 fun main() = application {
 
