@@ -1,5 +1,6 @@
 package ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.defaultMinSize
@@ -10,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.unit.dp
 import model.WeatherCard
@@ -24,6 +26,8 @@ fun ForecastUi(weatherCard: WeatherCard) {
     }
 
     Card(
+        border = BorderStroke(2.dp, Color.Gray),
+        elevation = 50.dp,
         modifier = Modifier.padding(horizontal = 16.dp)
     ) {
         Column(

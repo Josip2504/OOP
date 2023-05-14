@@ -13,7 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import controller.LoginController
 import util.Lce
 
@@ -27,11 +29,17 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
     Box(
         modifier = Modifier.fillMaxSize().background(Color.LightGray)
     ) {
-
-        Text(
-            "Welcome to the Weather App",
-            modifier = Modifier.padding(50.dp)
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                "Welcome to the Weather App",
+                modifier = Modifier.padding(50.dp, top = 110.dp),
+                textAlign = TextAlign.Center,
+                fontSize = 40.sp
+            )
+        }
 
         when(val state = loginController.uiState.value){
             is Lce.Content -> TODO()

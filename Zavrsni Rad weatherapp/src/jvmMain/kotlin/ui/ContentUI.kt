@@ -1,6 +1,7 @@
 package ui
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -32,10 +33,11 @@ fun ContentUI(data: WeatherResults) {
         modifier = Modifier.padding(end = 10.dp),
         text = "Current Weather",
         textAlign = TextAlign.Start,
-        style = MaterialTheme.typography.h6
+        style = MaterialTheme.typography.h5
     )
 
     Card(
+        border = BorderStroke(1.dp, Color.Gray),
         elevation = 50.dp,
         modifier = Modifier.fillMaxWidth().padding(horizontal = 72.dp,)
     ) {
@@ -45,7 +47,7 @@ fun ContentUI(data: WeatherResults) {
         ) {
             Text(
                 text = data.currentWeather.condition,
-                style = MaterialTheme.typography.h6
+                style = MaterialTheme.typography.h5
             )
         }
 
@@ -60,8 +62,8 @@ fun ContentUI(data: WeatherResults) {
                     Image(
                         bitmap = bitmap,
                         contentDescription = null,
-                        modifier = Modifier.defaultMinSize(128.dp, 128.dp)
-                            .padding(8.dp)
+                        modifier = Modifier.defaultMinSize(150.dp, 150.dp)
+                            .padding(8.dp, bottom = 40.dp)
                     )
                 }
             }
@@ -70,12 +72,14 @@ fun ContentUI(data: WeatherResults) {
             ) {
                 Text(
                     text = "Temperature in °C: ${data.currentWeather.temperature}",
-                    modifier = Modifier.padding(100.dp, top = 35.dp)
+                    modifier = Modifier.padding(100.dp, top = 35.dp),
+                    style = MaterialTheme.typography.h6
                 )
 
                 Text(
                     text = "Feels Like: ${data.currentWeather.feelsLike} °C",
-                    modifier = Modifier.padding(start = 100.dp, top = 10.dp)
+                    modifier = Modifier.padding(start = 100.dp, top = 10.dp),
+                    style = MaterialTheme.typography.h6
                 )
             }
         }
@@ -89,7 +93,7 @@ fun ContentUI(data: WeatherResults) {
     Text(
         text = "Forecast",
         modifier = Modifier.padding(16.dp),
-        style = MaterialTheme.typography.h6
+        style = MaterialTheme.typography.h5
     )
 
     LazyRow {
@@ -106,7 +110,7 @@ fun ContentUI(data: WeatherResults) {
     Text(
         text = "History",
         modifier = Modifier.padding(16.dp),
-        style = MaterialTheme.typography.h6
+        style = MaterialTheme.typography.h5
     )
 
 
