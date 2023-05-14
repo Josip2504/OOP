@@ -51,7 +51,9 @@ class DatabaseConnection {
         if (connection.historys.isEmpty()){
             return println("No history")
         }else {
-            println("history")
+            return connection.historys.forEach {
+                println(it.location)
+            }
         }
     }
 

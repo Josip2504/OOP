@@ -3,10 +3,7 @@ package ui
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -31,41 +28,56 @@ fun ContentUI(data: WeatherResults) {
         imageState = ImageDownloader().downloadImage(data.currentWeather.iconUrl)
     }
 
-
     Text(
+        modifier = Modifier.padding(end = 10.dp),
         text = "Current Weather",
         textAlign = TextAlign.Start,
         style = MaterialTheme.typography.h6
     )
 
     Card(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 72.dp)
+        elevation = 50.dp,
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 72.dp,)
     ) {
         Column(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            modifier = Modifier.padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = data.currentWeather.condition,
                 style = MaterialTheme.typography.h6
             )
-            imageState?.let {bitmap ->
-                Image(
-                    bitmap = bitmap,
-                    contentDescription = null,
-                    modifier = Modifier.defaultMinSize(128.dp, 128.dp)
-                        .padding(8.dp)
+        }
+
+        Row(
+            modifier = Modifier.padding(10.dp, top = 60.dp),
+            horizontalArrangement = Arrangement.Center
+        ){
+            Column(
+
+            ) {
+                imageState?.let {bitmap ->
+                    Image(
+                        bitmap = bitmap,
+                        contentDescription = null,
+                        modifier = Modifier.defaultMinSize(128.dp, 128.dp)
+                            .padding(8.dp)
+                    )
+                }
+            }
+            Column(
+
+            ) {
+                Text(
+                    text = "Temperature in °C: ${data.currentWeather.temperature}",
+                    modifier = Modifier.padding(100.dp, top = 35.dp)
+                )
+
+                Text(
+                    text = "Feels Like: ${data.currentWeather.feelsLike} °C",
+                    modifier = Modifier.padding(start = 100.dp, top = 10.dp)
                 )
             }
-            Text(
-                text = "Temperature in °C: ${data.currentWeather.temperature}",
-                modifier = Modifier.padding(8.dp)
-            )
-
-            Text(
-                text = "Feels Like: ${data.currentWeather.feelsLike} °C",
-                style = MaterialTheme.typography.caption
-            )
         }
     }
 
@@ -97,5 +109,5 @@ fun ContentUI(data: WeatherResults) {
         style = MaterialTheme.typography.h6
     )
 
-//    db.getHistory()
+
 }

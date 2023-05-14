@@ -31,6 +31,8 @@ kotlin {
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.0")
                 implementation("org.ktorm:ktorm-core:3.6.0")
                 implementation("com.mysql:mysql-connector-j:8.0.33")
+                implementation("androidx.compose.material:material:1.0.0-beta01")
+
             }
         }
         val jvmTest by getting

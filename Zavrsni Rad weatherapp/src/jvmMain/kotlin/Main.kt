@@ -1,10 +1,10 @@
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
@@ -37,13 +37,9 @@ fun main() = application {
     ) {
         val scaffoldState = rememberScaffoldState()
 
-        MaterialTheme() {
-
-
-//            TEST ZA GET HISTORY
-            db.getHistory()
-
-
+        Box(
+            modifier = Modifier.fillMaxSize().background(Color.LightGray)
+        ) {
             when(navController.currentScreen.value){
                 NavController.Screen.LOGIN -> {
                     Scaffold(

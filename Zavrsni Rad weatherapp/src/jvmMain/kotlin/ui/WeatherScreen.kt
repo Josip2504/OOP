@@ -76,7 +76,7 @@ fun WeatherScreen(
                 border = BorderStroke(2.dp, Color.Transparent),
                 onClick = {
                     weatherController.setState(Lce.Loading)
-//                    db.addHistory(queriedCity)
+                    db.addHistory(queriedCity)
                     scope.launch {
                         weatherController.setState(weatherController.weatherForCity(queriedCity))
                     }
