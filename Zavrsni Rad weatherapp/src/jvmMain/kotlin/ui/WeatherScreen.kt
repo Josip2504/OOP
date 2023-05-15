@@ -4,6 +4,7 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExitToApp
@@ -60,7 +61,7 @@ fun WeatherScreen(
                 Icon(Icons.Default.ExitToApp, "logout")
             }
             TextField(
-                shape = CircleShape,
+                shape = RoundedCornerShape(10.dp),
                 modifier = Modifier.padding(16.dp).weight(1f),
                 value = queriedCity,
                 singleLine = true,

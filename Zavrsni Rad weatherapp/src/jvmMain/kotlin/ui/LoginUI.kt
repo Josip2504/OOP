@@ -1,16 +1,20 @@
 package ui
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import controller.NavController
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -67,7 +71,7 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                     modifier = Modifier.fillMaxSize().padding(24.dp)
                 ) {
                     TextField(
-                        shape = CircleShape,
+                        shape = RoundedCornerShape(10.dp),
                         value = textFieldUsernameState,
                         onValueChange = {
                             textFieldUsernameState = it
@@ -80,7 +84,7 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                     )
                     Spacer(modifier = Modifier.size(16.dp))
                     TextField(
-                        shape = CircleShape,
+                        shape = RoundedCornerShape(10.dp),
                         value = textFieldPasswordState,
                         onValueChange = {
                             textFieldPasswordState = it

@@ -25,6 +25,7 @@ fun ContentUI(data: WeatherResults) {
     val db = DatabaseConnection()
     var imageState by remember { mutableStateOf<ImageBitmap?>(null) }
 
+
     LaunchedEffect(data.currentWeather.iconUrl){
         imageState = ImageDownloader().downloadImage(data.currentWeather.iconUrl)
     }
@@ -81,6 +82,7 @@ fun ContentUI(data: WeatherResults) {
                     modifier = Modifier.padding(start = 100.dp, top = 10.dp),
                     style = MaterialTheme.typography.h6
                 )
+
             }
         }
     }
@@ -112,6 +114,8 @@ fun ContentUI(data: WeatherResults) {
         modifier = Modifier.padding(16.dp),
         style = MaterialTheme.typography.h5
     )
+
+    db.getHistory()
 
 
 }
