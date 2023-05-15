@@ -47,16 +47,6 @@ class DatabaseConnection {
         }
     }
 
-    fun getHistory() {
-        if (connection.historys.isEmpty()){
-            return println("No history")
-        }else {
-            return connection.historys.forEach {
-                println(it.location)
-            }
-        }
-    }
-
     fun addHistory(queriedCity: String){
         connection.historys.add(
             History {

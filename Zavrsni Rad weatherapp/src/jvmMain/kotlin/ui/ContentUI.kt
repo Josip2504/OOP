@@ -5,6 +5,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
@@ -15,7 +16,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dao.Historys
 import db.DatabaseConnection
+import model.History
 import model.WeatherResults
 import util.ImageDownloader
 
@@ -24,7 +27,6 @@ import util.ImageDownloader
 fun ContentUI(data: WeatherResults) {
     val db = DatabaseConnection()
     var imageState by remember { mutableStateOf<ImageBitmap?>(null) }
-
 
     LaunchedEffect(data.currentWeather.iconUrl){
         imageState = ImageDownloader().downloadImage(data.currentWeather.iconUrl)
@@ -115,7 +117,6 @@ fun ContentUI(data: WeatherResults) {
         style = MaterialTheme.typography.h5
     )
 
-    db.getHistory()
 
 
 }
