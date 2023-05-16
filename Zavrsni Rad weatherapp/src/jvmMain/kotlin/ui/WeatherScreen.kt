@@ -36,6 +36,7 @@ fun WeatherScreen(
     val db = DatabaseConnection()
     var queriedCity by remember { mutableStateOf(weatherController.getUserById(authenticationService.getAuthenticatedUserId())?.location?: "") }
     val scope = rememberCoroutineScope()
+    val aS = AuthenticationService(db)
 
     LaunchedEffect(authenticationService.getAuthenticatedUserId()) {
         if(authenticationService.getAuthenticatedUserId() > 0){
@@ -77,7 +78,7 @@ fun WeatherScreen(
                 border = BorderStroke(2.dp, Color.Transparent),
                 onClick = {
                     weatherController.setState(Lce.Loading)
-                    db.addHistory(queriedCity)
+                    db.addHistory(queriedCity, aS.getAuthenticatedUserId())
                     scope.launch {
                         weatherController.setState(weatherController.weatherForCity(queriedCity))
                     }

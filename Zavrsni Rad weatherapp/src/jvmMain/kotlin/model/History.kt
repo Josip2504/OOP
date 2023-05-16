@@ -6,5 +6,5 @@ interface History: Entity<History> {
     companion object: Entity.Factory<History>()
     val id: Int
     var location: String
-    var userId: User
+    var userId: Int
 }

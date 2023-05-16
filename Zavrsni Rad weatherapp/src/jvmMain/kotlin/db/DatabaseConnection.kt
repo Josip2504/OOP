@@ -1,10 +1,9 @@
 package db
 
-//import dao.historys
+
 import dao.historys
 import dao.users
 import model.History
-//import model.History
 import model.User
 import org.ktorm.database.Database
 import org.ktorm.dsl.eq
@@ -47,10 +46,11 @@ class DatabaseConnection {
         }
     }
 
-    fun addHistory(queriedCity: String){
+    fun addHistory(queriedCity: String, authenticatedUserId: Int, ){
         connection.historys.add(
             History {
                 location = queriedCity
+                userId = authenticatedUserId
             }
         )
     }

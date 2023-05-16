@@ -16,11 +16,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import dao.Historys
 import db.DatabaseConnection
 import model.History
 import model.WeatherResults
 import util.ImageDownloader
+import dao.Historys as Historys
 
 @Composable
 @Preview
@@ -117,6 +117,8 @@ fun ContentUI(data: WeatherResults) {
         style = MaterialTheme.typography.h5
     )
 
-
+    Text(
+        text = "${Historys.location}"
+    )
 
 }

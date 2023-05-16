@@ -11,6 +11,6 @@ val Database.historys get() = this.sequenceOf(Historys)
 
 object Historys: Table<History>("historys") {
     val id = int("id").primaryKey().bindTo { it.id }
-    val userId = int("user_id").references(Users){ it.userId }
+    val userId = int("user_id").bindTo { it.userId }
     val location = varchar("location").bindTo { it.location }
 }
