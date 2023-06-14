@@ -100,14 +100,14 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
 
 
 //              CHECKBOX NIJE DOVRSENO
-                    Row {
-                        Checkbox(
-                            checked = true,
-                            onCheckedChange = null,
-                            modifier = Modifier.padding(all = 10.dp)
-                        )
-                        Text("Remember me", modifier = Modifier.padding(top = 14.dp))
-                    }
+//                    Row {
+//                        Checkbox(
+//                            checked = true,
+//                            onCheckedChange = null,
+//                            modifier = Modifier.padding(all = 10.dp)
+//                        )
+//                        Text("Remember me", modifier = Modifier.padding(top = 14.dp))
+//                    }
 
 
                     Row {

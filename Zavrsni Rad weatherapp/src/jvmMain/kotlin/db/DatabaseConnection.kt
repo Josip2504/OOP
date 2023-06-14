@@ -46,12 +46,12 @@ class DatabaseConnection {
         }
     }
 
-    fun addHistory(queriedCity: String, authenticatedUserId: Int, ){
-        connection.historys.add(
-            History {
-                location = queriedCity
-                userId = authenticatedUserId
-            }
-        )
-    }
+//    fun addHistory(queriedCity: String, authenticatedUserId: Int, ){
+//        connection.historys.add(
+//            History {
+//                location = queriedCity
+//                userId = authenticatedUserId
+//            }
+//        )
+//    }
 }
