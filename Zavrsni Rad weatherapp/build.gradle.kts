@@ -32,6 +32,8 @@ kotlin {
                 implementation("org.ktorm:ktorm-core:3.6.0")
                 implementation("com.mysql:mysql-connector-j:8.0.33")
                 implementation("androidx.compose.material:material:1.0.0-beta01")
+                implementation( "com.google.accompanist:accompanist-drawablepainter:0.18.0")
+
 
             }
         }

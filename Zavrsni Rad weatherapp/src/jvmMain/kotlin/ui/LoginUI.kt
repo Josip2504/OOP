@@ -1,5 +1,7 @@
 package ui
 
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -10,6 +12,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,11 +20,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import controller.LoginController
 import util.Lce
+
 
 @Composable
 fun LoginScreen(navController: NavController, loginController: LoginController) {
@@ -69,8 +74,9 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier.fillMaxSize().padding(24.dp)
-                ) {
-                    TextField(
+                )
+                {
+                    Row { TextField(
                         shape = RoundedCornerShape(10.dp),
                         value = textFieldUsernameState,
                         onValueChange = {
@@ -80,10 +86,14 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                             Text("Enter your username")
                         },
                         singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                    Spacer(modifier = Modifier.size(16.dp))
-                    TextField(
+                        modifier = Modifier.width(500.dp)
+                    ) }
+
+                    Row { Spacer(modifier = Modifier.size(16.dp)) }
+
+                    var passwordVisibility by remember { mutableStateOf(false) }
+
+                    Row { TextField(
                         shape = RoundedCornerShape(10.dp),
                         value = textFieldPasswordState,
                         onValueChange = {
@@ -93,9 +103,22 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                             Text("Enter your password")
                         },
                         singleLine = true,
-                        visualTransformation = PasswordVisualTransformation(),
-                        modifier = Modifier.fillMaxWidth()
+                        visualTransformation = if (passwordVisibility) {
+                            VisualTransformation.None
+                        } else {
+                            PasswordVisualTransformation()
+                        },
+                        modifier = Modifier.width(560.dp).padding(start = 75.dp)
                     )
+                        Button(
+                            shape = CircleShape,
+                            onClick = { passwordVisibility = !passwordVisibility },
+                            modifier = Modifier.padding(start = 8.dp)
+                        ) {
+                            Text(if (passwordVisibility) "Hide" else "Show")
+                        }
+                    }
+
                     Spacer(modifier = Modifier.size(16.dp))
 
 
