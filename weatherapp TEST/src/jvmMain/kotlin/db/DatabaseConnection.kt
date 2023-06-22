@@ -54,4 +54,10 @@ class DatabaseConnection {
             }
         )
     }
+
+    fun getHistory(): List<History> {
+        return connection.historys.filter {
+            it.location eq
+        }
+    }
 }
