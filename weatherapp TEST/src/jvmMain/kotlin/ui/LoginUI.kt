@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -80,10 +81,13 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                             Text("Enter your username")
                         },
                         singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.width(500.dp)
                     )
                     Spacer(modifier = Modifier.size(16.dp))
-                    TextField(
+
+                    var passwordVisibility by remember { mutableStateOf(false) }
+
+                    Row { TextField(
                         shape = RoundedCornerShape(10.dp),
                         value = textFieldPasswordState,
                         onValueChange = {
@@ -93,18 +97,32 @@ fun LoginScreen(navController: NavController, loginController: LoginController) 
                             Text("Enter your password")
                         },
                         singleLine = true,
-                        visualTransformation = PasswordVisualTransformation(),
-                        modifier = Modifier.fillMaxWidth()
+                        visualTransformation = if (passwordVisibility) {
+                            VisualTransformation.None
+                        } else {
+                            PasswordVisualTransformation()
+                        },
+                        modifier = Modifier.width(560.dp).padding(start = 75.dp)
                     )
+                        Button(
+                            shape = CircleShape,
+                            onClick = { passwordVisibility = !passwordVisibility },
+                            modifier = Modifier.padding(start = 8.dp)
+                        ) {
+                            Text(if (passwordVisibility) "Hide" else "Show")
+                        }
+                    }
+
                     Spacer(modifier = Modifier.size(16.dp))
 
 
 //              CHECKBOX NIJE DOVRSENO
+                    var remeberMe by remember { mutableStateOf(true) }
                     Row {
                         Checkbox(
-                            checked = true,
-                            onCheckedChange = null,
-                            modifier = Modifier.padding(all = 10.dp)
+                            checked = remeberMe,
+                            onCheckedChange = { isChecked -> remeberMe = isChecked},
+                            modifier = Modifier.padding(all = 0.2.dp)
                         )
                         Text("Remember me", modifier = Modifier.padding(top = 14.dp))
                     }

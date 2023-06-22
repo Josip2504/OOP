@@ -1,0 +1,24 @@
+
+1. Koje su osnovnoe naredbe u SQL-u za dohvacanje, dodavanje, ureðivanje i brisanje podataka iz tablice, te koju naredbu koristimo kada zelimo dohvatiti informacije iz vise tablica odjednom?
+- za dohvaèanje koristimo SELECT:
+SELECT*FROM ime_tablice WHERE uvjet;
+-za dodavanje INSERT:
+INSERT INTO ime_tablice(stupac) VALUES (vrijednost);
+-za ureðivanje UPDATE:
+UPADATE ime_tablice SET stupac = nova vrijendost WHERE uvijet;
+-za brisanje DELETE:
+DELETE FROM ime_tablice WHERE uvije;
+
+ 2. Što je klasa, a što objekt u objektno orjentiranom programiranju, te nabrojte sve koncepte objektno orjentiranog programiranja.
+-Klasa je opisnik objekta, predložak koji definira svojstva i ponašanja objekata odreðenog tipa.
+-Objekt je instanca klase odnosno konkretna pojava koja je stvorena prema definiciji klase. 
+-Koncepti:
+Encapsulation (Enkapsulacija)
+Inheritance (Naslijeðivanje)
+Polymorphism (Polimorfizam)
+Abstraction (Apstrakcija)
+Association (Asocijacija)
+Aggregation (Agregacija)
+
+3. Što je Compose for desktop?
+-Compose je alat za izradu i ureðivanje korisnièkog suèelja (user interface). Koristi se za desktop aplikacije (Windows, Linux, Mac), a takoðer se može koristit za mulitplatform (Desktop i Android)
